@@ -1,0 +1,16 @@
+on: [release]
+
+jobs:
+  azure-cost-analyser:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.0.0
+    - name: Azure-cost
+      uses: ./
+      with:
+        subscriptionId: 25a5ce05-d50a-421a-b354-80ea51753a9e 
+        directoryId:  53488fd2-4366-4664-a7be-088133abad53
+        clientId: 2ddcfcc8-0968-48c6-8cc8-5e796455004e
+        clientSecret: ${{ secrets.azure_client_secret }} 
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
